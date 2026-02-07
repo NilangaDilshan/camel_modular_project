@@ -1,0 +1,25 @@
+server:
+    port: 8090
+spring:
+    application:
+        name: camel-producer
+    datasource:
+        url: jdbc:mysql://localhost:3306/your_database
+        username: your_username
+        password: your_password
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQLDialect
+
+csv:
+    input:
+        path: files/csv
+    success:
+        path: .done
+    error:
+        path: .error
+    poll:
+        delay: 5000
